@@ -65,3 +65,24 @@ public:
         cout << "----------------------------------------------------" << endl;
     }
 };
+
+int main() {
+    RekeningBank* akun;
+
+    // Jangan pakai tanda kurung kosong saat bikin objek tanpa parameter awal,
+    // tapi karena di sini kita butuh input No Rek dan Saldo, langsung masukin di dalam kurung:
+    RekeningSyariah nasabah1("SYR-001", 500000);
+    RekeningKonvensional nasabah2("KNV-099", 2000000); 
+    RekeningPremium nasabah3("PRM-002", 15000000);
+
+    akun = &nasabah1;
+    akun->potongAdmin();
+
+    akun = &nasabah2;
+    akun->potongAdmin();
+    
+    akun = &nasabah3;
+    akun->potongAdmin();
+
+    return 0;
+}
