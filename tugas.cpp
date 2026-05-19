@@ -23,3 +23,22 @@ public:
         cout << "----------------------------------------------------" << endl;
     }
 };
+
+class RekeningKonvensional : public RekeningBank {
+private:
+    string noRek;
+    double saldo;
+
+public:
+    RekeningKonvensional(string no, double saldoAwal) {
+        noRek = no;
+        saldo = saldoAwal;
+    }
+
+    void potongAdmin() {
+        saldo -= 15000;
+        cout << "Rekening Konvensional: Dipotong biaya admin Rp 15000" << endl;
+        cout << "No Rek: " << noRek << " | Saldo Akhir: Rp " << saldo << endl;
+        cout << "----------------------------------------------------" << endl;
+    }
+};
