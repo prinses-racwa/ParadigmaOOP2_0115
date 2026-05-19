@@ -42,3 +42,26 @@ public:
         cout << "----------------------------------------------------" << endl;
     }
 };
+
+class RekeningPremium : public RekeningBank {
+private:
+    string noRek;
+    double saldo;
+
+public:
+    RekeningPremium(string no, double saldoAwal) {
+        noRek = no;
+        saldo = saldoAwal;
+    }
+
+    void potongAdmin() {
+        if (saldo > 10000000) {
+            cout << "Rekening Premium: Bebas biaya admin karena saldo di atas 10JT." << endl;
+        } else {
+            saldo -= 50000;
+            cout << "Rekening Premium: Dipotong biaya admin Rp 50000 karena saldo <= 10JT." << endl;
+        }
+        cout << "No Rek: " << noRek << " | Saldo Akhir: Rp " << saldo << endl;
+        cout << "----------------------------------------------------" << endl;
+    }
+};
